@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивный RGB Миксер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RGB-микшер</h1>
+        <p class="instruction">Двигайте мышкой для смешивания цветов!</p>
+        <div class="color-display" id="colorDisplay">
+            <div class="color-info">
+                <div class="rgb-values" id="rgbValues">RGB(128, 128, 128)</div>
+                <div class="hex-value" id="hexValue">#808080</div>
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="coordinate-info">
+                <div class="coord-item">
+                    <span class="coord-label">X (Красный):</span>
+                    <span class="coord-value" id="xCoord">0</span>
+                </div>
+                <div class="coord-item">
+                    <span class="coord-label">Y (Зелёный):</span>
+                    <span class="coord-value" id="yCoord">0</span>
+                </div>
+                <div class="coord-item">
+                    <span class="coord-label">Синий:</span>
+                    <span class="coord-value" id="blueValue">128</span>
+                </div>
+            </div>
+            <div class="color-components">
+                <div class="component red">
+                    <div class="component-label">R</div>
+                    <div class="component-bar">
+                        <div class="component-fill" id="redFill"></div>
+                    </div>
+                    <div class="component-value" id="redValue">128</div>
+                </div>
+                <div class="component green">
+                    <div class="component-label">G</div>
+                    <div class="component-bar">
+                        <div class="component-fill" id="greenFill"></div>
+                    </div>
+                    <div class="component-value" id="greenValue">128</div>
+                </div>
+                <div class="component blue">
+                    <div class="component-label">B</div>
+                    <div class="component-bar">
+                        <div class="component-fill" id="blueFill"></div>
+                    </div>
+                    <div class="component-value" id="blueValue2">128</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

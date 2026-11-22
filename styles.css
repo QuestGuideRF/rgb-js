@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    cursor: crosshair;
+    overflow: hidden;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.instruction {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.color-display {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+    position: relative;
+    overflow: hidden;
+}
+.color-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.1) 25%,
+        transparent 25%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.1) 75%),
+        linear-gradient(45deg,
+        rgba(255, 255, 255, 0.1) 25%,
+        transparent 25%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.1) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    pointer-events: none;
+}
+.color-info {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+.rgb-values {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+.hex-value {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-family: 'Courier New', monospace;
+}
+.info-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.coordinate-info {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+.coord-item {
+    text-align: center;
+}
+.coord-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+.coord-value {
+    display: block;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.color-components {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.component-label {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.component-bar {
+    width: 20px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.component-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    transition: height 0.1s ease;
+}
+.red .component-fill {
+    background: linear-gradient(to top, #ff0000, #ff6666);
+}
+.green .component-fill {
+    background: linear-gradient(to top, #00ff00, #66ff66);
+}
+.blue .component-fill {
+    background: linear-gradient(to top, #0000ff, #6666ff);
+}
+.component-value {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    min-width: 30px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .color-display {
+        width: 300px;
+        height: 200px;
+    }
+    .coordinate-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .color-components {
+        gap: 15px;
+    }
+    .component-bar {
+        height: 80px;
+    }
+}
